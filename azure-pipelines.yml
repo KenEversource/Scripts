@@ -12,4 +12,4 @@ steps:
   
 - task: ShellScript@2
   inputs:
-    scriptPath: 'ServiceNowCreateTicket.sh'
+    scriptPath: 'ServiceNowCreateTicket.sh $(serviceNowAuth)'
