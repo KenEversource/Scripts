@@ -14,6 +14,7 @@ steps:
 # Invoke a REST API as a part of your pipeline.
 - task: InvokeRESTAPI@1
   inputs:
+    baseUrl: 'https://eversourcetest.service-now.com/api/now/v1/table/incident/16d04292db856f006f9b6f13ca961982'
     #connectionType: 'connectedServiceName' # Options: connectedServiceName, connectedServiceNameARM
     #serviceConnection: # Required when connectionType == ConnectedServiceName
     #azureServiceConnection: # Required when connectionType == ConnectedServiceNameARM
