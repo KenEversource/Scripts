@@ -7,7 +7,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script: echo does the web hook work
+- script: echo does the web hook work, another one
   displayName: 'Run a one-line script'
 
 - script: |
