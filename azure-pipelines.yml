@@ -13,4 +13,4 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: 'ServiceNowCreateTicket.sh'
-              args: $(serviceNowAuth)
+              args: '$(serviceNowAuth)'
