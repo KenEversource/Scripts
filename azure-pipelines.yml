@@ -9,8 +9,17 @@ pool:
 steps:
 - script: echo does the web hook work, another one
   displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  
+# Invoke REST API
+# Invoke a REST API as a part of your pipeline.
+- task: InvokeRESTAPI@1
+  inputs:
+    #connectionType: 'connectedServiceName' # Options: connectedServiceName, connectedServiceNameARM
+    #serviceConnection: # Required when connectionType == ConnectedServiceName
+    #azureServiceConnection: # Required when connectionType == ConnectedServiceNameARM
+    method: 'PUT' # Options: oPTIONS, gET, hEAD, pOST, pUT, dELETE, tRACE, pATCH
+    headers: '{Content-Type:application/json, Accept:application/json}' 
+    body: '{"short_description":"Test Server is down", "comments":"From Azure Devops Pipeline", "urgency": "2"}'
+    #urlSuffix: # Optional
+    waitForCompletion: 'true' # Options: true, false
+    #successCriteria: # Optional
