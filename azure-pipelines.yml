@@ -10,17 +10,6 @@ steps:
 - script: echo does the web hook work, another one
   displayName: 'Run a one-line script'
   
-# Invoke REST API
-# Invoke a REST API as a part of your pipeline.
-- task: InvokeRESTAPI@1
+- task: ShellScript@2
   inputs:
-    baseUrl: 'https://eversourcetest.service-now.com/api/now/v1/table/incident/16d04292db856f006f9b6f13ca961982'
-    #connectionType: 'connectedServiceName' # Options: connectedServiceName, connectedServiceNameARM
-    #serviceConnection: # Required when connectionType == ConnectedServiceName
-    #azureServiceConnection: # Required when connectionType == ConnectedServiceNameARM
-    method: 'PUT' # Options: oPTIONS, gET, hEAD, pOST, pUT, dELETE, tRACE, pATCH
-    headers: '{Content-Type:application/json, Accept:application/json}' 
-    body: '{"short_description":"Test Server is down", "comments":"From Azure Devops Pipeline", "urgency": "2"}'
-    #urlSuffix: # Optional
-    waitForCompletion: 'true' # Options: true, false
-    #successCriteria: # Optional
+    scriptPath:ServiceNowCreateTicket.sh
