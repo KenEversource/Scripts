@@ -13,4 +13,3 @@ steps:
 - task: ShellScript@2
   inputs:
     scriptPath: 'ServiceNowCreateTicket.sh'
-               failOnStandardError: true
