@@ -5,7 +5,7 @@ workflow runbook2 {
         # If you do not enter anything, the default value of Name 
         # will be World
         [parameter(Mandatory=$false)]
-        [String]$Name = "World2"
+        [String]$Name = "World2 test"
     )
 
         Write-Output "Hello $Name"
