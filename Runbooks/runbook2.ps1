@@ -1,4 +1,4 @@
-workflow Write-HelloWorld {
+workflow runbook2 {
     param (
         
         # Optional parameter of type string. 
