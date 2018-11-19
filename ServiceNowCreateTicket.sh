@@ -2,4 +2,4 @@
 echo "Create a Ticket in Service Now"
 echo "First arg: $0"
 echo "Second arg: $1"
-curl  -i  -H "Content-type: application/json" -H "Accept: application/json" -H "Authorization: Basic $1" https://eversourcetest.service-now.com/api/now/v1/table/incident/16d04292db856f006f9b6f13ca961982
+curl -d '{"key1":"value1", "key2":"value3"}' -H "Content-Type: application/json" -X POST azurewebhook
