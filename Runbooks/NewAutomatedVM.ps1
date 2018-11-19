@@ -12,7 +12,8 @@ workflow NewAutomatedVM {
     Write-Output "$RequestHeader"
     Write-Output "$RequestBody"
     
-    
+    $output = Get-AzureRMVM
+    Write-Output $output
     
 
 }
